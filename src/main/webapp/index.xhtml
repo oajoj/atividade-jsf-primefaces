@@ -27,7 +27,8 @@
                     <p:inputNumber id="peso" value="#{indexController.peso}"></p:inputNumber>
                     <p:watermark for="peso" value="Peso / kg"/>
                 </div>
-                <p:commandButton action="#{indexController.calcular()}" value="Calcular" update="@form"></p:commandButton>
+
+                <p:commandButton action="#{indexController.calcular}" update="@form" value="Calcular"></p:commandButton>
 
                 <p:inputText value="#{indexController.diagnostico}" disabled="true"/>
             </section>

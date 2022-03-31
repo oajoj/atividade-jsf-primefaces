@@ -6,6 +6,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
+@SessionScoped
 public class IndexController implements Serializable {
 
     private Integer idade;
@@ -28,7 +29,7 @@ public class IndexController implements Serializable {
     }
 
     public void calcular(){
-        this.diagnostico = "rafael";
+        this.diagnostico = this.imc.calcular(peso, altura).getDetalhe();
     }
 
     public Integer getIdade() {
