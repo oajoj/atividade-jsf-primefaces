@@ -18,7 +18,7 @@ public enum IMCEnum {
 
     public static IMCEnum of(Double valor){
 
-        if(valor <= 18.5) return IMCEnum.ABAIXO;
+        if(valor > 0 && valor <= 18.5) return IMCEnum.ABAIXO;
 
         if(valor > 18.5 && valor <= 25) return IMCEnum.NORMAL;
 

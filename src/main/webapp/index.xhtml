@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
@@ -11,24 +10,24 @@
 <h:body>
     <main class="main-container">
         <figure>
-            <img src="img/img-banner.png"></img>
+            <img alt="imc-image" src="img/img-banner.png"/>
         </figure>
         <h:form>
             <section class="main-form-container">
-                <div class="form-content">
-                    <p:inputText id="idade" label="Idade" value="#{indexController.idade}"></p:inputText>
-                    <p:watermark for="idade" value="Idade"/>
+                <div class="ui-float-label form-content">
+                    <p:inputText id="idade" label="Idade" value="#{indexController.idade}"/>
+                    <p:outputLabel for="@previous" value="Idade"/>
                 </div>
-                <div class="form-content">
-                    <p:inputNumber id="altura" value="#{indexController.altura}"></p:inputNumber>
-                    <p:watermark for="altura" value="Altura / cm"/>
+                <div class="ui-float-label form-content">
+                    <p:inputNumber id="altura" value="#{indexController.altura}"/>
+                    <p:outputLabel for="@previous" value="Altura em metros"/>
                 </div>
-                <div class="form-content">
-                    <p:inputNumber id="peso" value="#{indexController.peso}"></p:inputNumber>
-                    <p:watermark for="peso" value="Peso / kg"/>
+                <div class="ui-float-label form-content">
+                    <p:inputNumber id="peso" value="#{indexController.peso}"/>
+                    <p:outputLabel for="@previous" value="Peso em quilos"/>
                 </div>
 
-                <p:commandButton action="#{indexController.calcular}" update="@form" value="Calcular"></p:commandButton>
+                <p:commandButton action="#{indexController.calcular}" update="@form" value="Calcular"/>
 
                 <p:inputText value="#{indexController.diagnostico}" disabled="true"/>
             </section>
